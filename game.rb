@@ -64,7 +64,9 @@ if $PROGRAM_NAME == __FILE__
 
   case ARGV.count
   when 0
-    MinesweeperGame.new(:small).play
+    puts "Enter borad size: small, medium, large"
+    user_choice = gets.chomp.to_sym
+    MinesweeperGame.new(user_choice).play
   when 1
     # resume game, using first argument
     YAML.load_file(ARGV.shift).play
